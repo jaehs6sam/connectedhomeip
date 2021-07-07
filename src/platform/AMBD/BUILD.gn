@@ -21,6 +21,10 @@ assert(chip_device_platform == "ambd")
 static_library("AMBD") {
   sources = [
     "../FreeRTOS/SystemTimeSupport.cpp",
+    "AMBDConfig.cpp",
+    "AMBDConfig.h",
+    "AMBDUtils.cpp",
+    "AMBDUtils.h",
     "BLEManagerImpl.h",
     "CHIPDevicePlatformConfig.h",
     "CHIPDevicePlatformEvent.h",
@@ -30,10 +34,6 @@ static_library("AMBD") {
     "ConnectivityManagerImpl.h",
     "DeviceNetworkProvisioningDelegateImpl.cpp",
     "DeviceNetworkProvisioningDelegateImpl.h",
-    "AMBDConfig.cpp",
-    "AMBDConfig.h",
-    "AMBDUtils.cpp",
-    "AMBDUtils.h",
     "KeyValueStoreManagerImpl.cpp",
     "KeyValueStoreManagerImpl.h",
     "Logging.cpp",
@@ -45,7 +45,6 @@ static_library("AMBD") {
     "ServiceProvisioning.h",
     "SoftwareUpdateManagerImpl.h",
     "SystemTimeSupport.cpp",
-
   ]
 
   deps = [ "${chip_root}/src/lib/mdns:platform_header" ]
